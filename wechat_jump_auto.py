@@ -27,7 +27,7 @@ import random
 
 # Magic Number，不设置可能无法正常执行，请根据具体截图从上到下按需设置
 under_game_score_y = 300     # 截图中刚好低于分数显示区域的 Y 坐标，300 是 1920x1080 的值，2K 屏、全面屏请根据实际情况修改
-press_coefficient = 1.392    # 长按的时间系数，请自己根据实际情况调节
+press_coefficient = 2.008    # 长按的时间系数，请自己根据实际情况调节
 swipe_x1, swipe_y1, swipe_x2, swipe_y2 = 320, 410, 320, 410     # 模拟按压的起始点坐标，需要自动重复游戏请设置成“再来一局”的坐标
 piece_base_height_1_2 = 20   # 二分之一的棋子底座高度，可能要调节
 piece_body_width = 70       # 棋子的宽度，比截图中量到的稍微大一点比较安全，可能要调节
@@ -49,7 +49,7 @@ def backup_screenshot(ts):
     # 为了方便失败的时候 debug
     if not os.path.isdir(screenshot_backup_dir):
         os.mkdir(screenshot_backup_dir)
-    os.system('cp 1.png {}{}.png'.format(screenshot_backup_dir, ts))
+    os.system('copy 1.png {}{}.png'.format(screenshot_backup_dir, ts))
 
 
 def save_debug_creenshot(ts, im, piece_x, piece_y, board_x, board_y):
